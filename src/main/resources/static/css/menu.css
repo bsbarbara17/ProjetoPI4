@@ -1,0 +1,182 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+font-family: "M PLUS Rounded 1c", sans-serif;
+font-style: normal;
+color: white;
+
+}
+
+.cabecalho{
+    display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background-color: white;
+height: 40px;
+width: 100%;
+padding: 10px;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+position: fixed;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row; 
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;    
+    font-size: 35px;  
+    align-items: center;
+}
+
+.secoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+a{
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: red;
+    margin: 0px 10px 0px 0px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+h6{
+    margin-left: 3px;
+}
+
+.container1 h1{
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: white;
+    font-size: 56px;
+    font-weight: 100;
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/Food Images.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-blend-mode: luminosity;
+    height: 35rem;
+}
+
+.container2 h1{
+    color: red;
+    font-size: 40px;
+    margin: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+    .container2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: white;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .bottom button { 
+        border: none;
+        height: 2.5rem;
+        width: 30rem;
+        margin: 15px;
+        margin-bottom: 40px;
+        background-color: red;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+    }
+
+    .box{    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: darkred;
+        padding: 10px 10px;
+        width: 13rem;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    .botao{
+        margin-top: 6px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{
+        border: none;
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        margin: 5px;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+    }
+
+    .column{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bottom a{
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .container3{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .text{
+        width: 40%;
+        margin-left: 30px;
+    }
+
+    .text h1{
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        color: darkgreen;
+        font-weight: bold;
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .text p{
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        color: black;
+        font-weight: thin;
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }

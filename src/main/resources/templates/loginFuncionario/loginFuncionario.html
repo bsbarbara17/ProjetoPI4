@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="/css/loginFuncionario.css" media="screen" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        
+    <title>Pizzaria Bandeira dos Sabores</title>
+</head>
+<body>
+    <section id="container" class="container">
+        <div>
+            <div class='boxLogo'>
+                <div class='logo'>
+                    <img src="../images/pizza.png" alt="" width="auto" height="90px"/>
+                </div>
+                <div class='marca'>
+                    Pizzaria Bandeira dos Sabores  
+                </div>  
+            </div>
+            <div class='boxForm'>
+                <label for="femail">Email:</label>
+                <input type="text" id="femail" name="femail"/>
+                <label for="fsenha">Senha:</label>
+                <input type="text" id="fsenha" name="fsenha"/>
+                <button id="btnLogin">  Acessar como funcionário </button>
+                <h4> Não possui conta? <a href="../cadastroFuncionario/cadastroFuncionario.html"> Cadastre-se </a> </h4>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('btnLogin').addEventListener('click', () => {
+            const usuario = document.getElementById("femail").value;
+            const senha = document.getElementById("fsenha").value;
+
+            if (usuario === "admin" && senha === "admin") {
+                window.location.href = "../controlePedidos/controlePedidos.html";
+            } else {
+                alert("email e senha incorretos");
+            }
+        }); 
+    </script>
+</body>
+
+</html>
