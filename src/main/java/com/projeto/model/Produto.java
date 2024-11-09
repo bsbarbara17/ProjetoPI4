@@ -1,25 +1,36 @@
 package com.projeto.model;
+
+import java.math.BigDecimal;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@SuppressWarnings("serial")
 @Entity
-public class Produto {
+@Table(name = "PRODUTOS")
+public class Produto extends AbstractEntity<Long> {
 
-    @Id
-    private Long id;
+    @Column(name = "nome", nullable = false, length = 255)
     private String nome;
+    
+    @Column(name = "descricao", nullable = false, length = 255)
     private String descricao;
-    private Double preco;
-    private Integer estoque;
+    
+    @Column(name = "imagem", length = 255)
+    private String imagem;
+    
+    @Column(name = "preco", nullable = false, precision = 10, scale = 2)
+    private BigDecimal preco;
 
-    // Getters e setters
-    public Long getId() {
-        return id;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pedidos_idPedido")
+    private Pedido pedido;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    // Getters e Setters
 
     public String getNome() {
         return nome;
@@ -37,19 +48,27 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Double getPreco() {
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
-    public Integer getEstoque() {
-        return estoque;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setEstoque(Integer estoque) {
-        this.estoque = estoque;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 }

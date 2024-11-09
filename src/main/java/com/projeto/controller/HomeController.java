@@ -9,6 +9,6 @@ public class HomeController {
     
     @GetMapping("/")
     public String home() {
-    	return "menu";
+    	return "/menu";
     }
 }

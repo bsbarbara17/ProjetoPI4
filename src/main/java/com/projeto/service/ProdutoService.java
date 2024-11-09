@@ -1,34 +1,20 @@
 package com.projeto.service;
 
-import org.springframework.stereotype.Service;
-
-import com.projeto.model.Produto;
-import com.projeto.repository.ProdutoRepository;
-
 import java.util.List;
 
-@Service
-public class ProdutoService {
+import com.projeto.model.Produto;
 
-    private final ProdutoRepository produtoRepository;
+public interface ProdutoService {
 
-    public ProdutoService(ProdutoRepository produtoRepository) {
-        this.produtoRepository = produtoRepository;
-    }
-
-    public List<Produto> listarProdutos() {
-        return produtoRepository.findAll();
-    }
-
-    public Produto salvarProduto(Produto produto) {
-        return produtoRepository.save(produto);
-    }
-
-    public Produto obterProdutoPorId(Long id) {
-        return produtoRepository.findById(id).orElse(null);
-    }
-
-    public void excluirProduto(Long id) {
-        produtoRepository.deleteById(id);
-    }
+    void salvar(Produto produto);
+    
+    void editar(Produto produto);
+    
+    void deletar(Long id);
+    
+    Produto buscarPorId(Long id);
+    
+    List<Produto> buscarTodos();
+    
+   //  boolean produtoTemEstoque(Long id);
 }

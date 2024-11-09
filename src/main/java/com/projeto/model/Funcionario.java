@@ -1,26 +1,28 @@
 package com.projeto.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.Table;
 
+@SuppressWarnings("serial")
 @Entity
-public class Funcionario {
+@Table(name = "FuncionarioS")
+public class Funcionario extends AbstractEntity<Long> {
 
-    @Id
-    private Long id;
+    @Column(name = "nome", nullable = false, length = 255)
     private String nome;
-    private String cargo;
-    private Double salario;
 
-    // Getters e setters
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "email", nullable = false, unique = true, length = 60)
+    private String email;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "senha", nullable = false, length = 255)
+    private String senha;
 
+    @Column(name = "cpf", nullable = false)
+    private Integer cpf;
+
+
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -29,19 +31,27 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Double getSalario() {
-        return salario;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setSalario(Double salario) {
-        this.salario = salario;
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Integer getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(Integer cpf) {
+        this.cpf = cpf;
     }
 }

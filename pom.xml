@@ -30,6 +30,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		
+		
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
@@ -67,6 +74,17 @@
             <artifactId>jquery-mask-plugin</artifactId>
             <version>1.14.13</version>
         </dependency>
+        
+        <dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+			<scope>runtime</scope>
+		</dependency>
 
         <!-- Spring Beans e Context (Essenciais para o Spring Boot) -->
         <dependency>
@@ -77,46 +95,29 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-
-        <!-- Spring Boot JPA -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
+		
         <!-- Hibernate JPA -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.1-api</artifactId>
             <version>1.0.0.Final</version>
         </dependency>
-
-        <!-- MySQL Connector para Java -->
+        
+        
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version> <!-- Ajuste para uma versão compatível com o Java 21 -->
-            <scope>runtime</scope>
-        </dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>2.0.0.Final</version>
+		</dependency>
     </dependencies>
 
     <build>
-	    <plugins>
-	        <plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-resources-plugin</artifactId>
-	            <version>3.1.0</version> <!-- Use uma versão diferente se necessário -->
-	            <executions>
-	                <execution>
-	                    <phase>process-resources</phase>
-	                    <goals>
-	                        <goal>resources</goal>
-	                    </goals>
-	                </execution>
-	            </executions>
-	        </plugin>
-	    </plugins>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
-
 
 </project>

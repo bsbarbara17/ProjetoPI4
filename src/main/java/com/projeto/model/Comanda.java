@@ -1,31 +1,23 @@
 package com.projeto.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Column;
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@SuppressWarnings("serial")
 @Entity
-public class Comanda {
+@Table(name = "Comanda")
+public class Comanda extends AbstractEntity<Long> {
 
-    @Id
-    private Long idCarrinho;
-
-    @Column(nullable = false)
+    @Column(name = "itens", nullable = false)
     private int itens;
 
-    @Column(nullable = false, precision = 10, scale = 2)
+    @Column(name = "total", nullable = false, precision = 10, scale = 2)
     private BigDecimal total;
 
-    // Getters e setters
-    public Long getIdCarrinho() {
-        return idCarrinho;
-    }
-
-    public void setIdCarrinho(Long idCarrinho) {
-        this.idCarrinho = idCarrinho;
-    }
-
+    // Getters e Setters
     public int getItens() {
         return itens;
     }

@@ -1,32 +1,19 @@
 package com.projeto.service;
 
-import com.projeto.model.Cliente;
-import com.projeto.repository.ClienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
-@Service
-public class ClienteService {
+import com.projeto.model.Cliente;
 
-    @Autowired
-    private ClienteRepository clienteRepository;
-
-    public List<Cliente> listarTodos() {
-        return clienteRepository.findAll();
-    }
-
-    public Optional<Cliente> buscarPorId(Long id) {
-        return clienteRepository.findById(id);
-    }
-
-    public Cliente salvar(Cliente cliente) {
-        return clienteRepository.save(cliente);
-    }
-
-    public void deletar(Long id) {
-        clienteRepository.deleteById(id);
-    }
+public interface ClienteService {
+    
+    void salvar(Cliente cliente);
+    
+    void editar(Cliente cliente);
+    
+    void excluir(Long id);
+    
+    Cliente buscarPorId(Long id);
+    
+    List<Cliente> buscarTodos();
+    
 }

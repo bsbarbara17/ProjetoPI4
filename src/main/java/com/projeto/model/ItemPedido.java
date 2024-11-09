@@ -1,62 +1,38 @@
 package com.projeto.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
-public class ItemPedido {
+@Table(name = "Itens do Pedido")
+public class ItemPedido extends AbstractEntity<Long> {
+    
+    @Column(name = "quantidade", nullable = false)
+    private int quantidade;
 
-    @Id
-    private Long id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "comanda_idComanda", foreignKey = @ForeignKey(name = "fk_item_pedido_comanda"))
+    private Comanda comanda;
 
-    @ManyToOne
-    private Produto produto;
-
-    @ManyToOne
-    private Pedido pedido;
-
-    private Integer quantidade;
-    private Double precoUnitario;
-
-    // Getters e setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
-
-    public Integer getQuantidade() {
+    // Getters e Setters
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
-    public Double getPrecoUnitario() {
-        return precoUnitario;
+    public Comanda getCarrinho() {
+        return comanda;
     }
 
-    public void setPrecoUnitario(Double precoUnitario) {
-        this.precoUnitario = precoUnitario;
+    public void setComanda(Comanda comanda) {
+        this.comanda = comanda;
     }
 }

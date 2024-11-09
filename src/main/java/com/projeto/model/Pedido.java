@@ -1,52 +1,49 @@
 package com.projeto.model;
 
+import java.math.BigDecimal;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.util.List;
+import javax.persistence.Table;
 
+@SuppressWarnings("serial")
 @Entity
-public class Pedido {
+@Table(name = "PEDIDOS")
+public class Pedido extends AbstractEntity<Long> {
+    
+    @Column(name = "itens", nullable = false)
+    private int itens;
 
-    @Id
-    private Long id;
+    @Column(name = "total", nullable = false, precision = 10, scale = 2)
+    private BigDecimal total;
 
-    @ManyToOne
-    private Cliente cliente;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "funcionario_idFuncionario")
+    private Funcionario funcionario;
 
-    private String status;
-    private Double total;
-
-    // Getters e setters
-    public Long getId() {
-        return id;
+    public int getItens() {
+        return itens;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setItens(int itens) {
+        this.itens = itens;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Double getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 }
